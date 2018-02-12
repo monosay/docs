@@ -20,7 +20,8 @@ jobs:
     working_directory: ~/repo
 
     steps:
-      -run: echo "Skipping tests on gh-pages branch"
+      # run tests!
+      - run: echo "Skipping the test."
 
 deployment:
   website:
