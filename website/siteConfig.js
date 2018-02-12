@@ -35,8 +35,8 @@ const siteConfig = {
     copyright: 'Copyright © ' +
         new Date().getFullYear() +
         ' {mono}say is a <a href="">MonoFor, Inc.</a> product',
-    organizationName: 'monofor', // or set an env variable ORGANIZATION_NAME
-    projectName: '{mono}say', // or set an env variable PROJECT_NAME
+    organizationName: 'monosay', // or set an env variable ORGANIZATION_NAME
+    projectName: 'docs', // or set an env variable PROJECT_NAME
     highlight: {
         // Highlight.js theme to use for syntax highlighting in code blocks
         theme: 'default',
