@@ -17,7 +17,7 @@ jobs:
     branches:
       ignore: gh-pages
 
-    working_directory: ~/repo
+    working_directory: ~/
 
     steps:
       - run: git config --global user.email "se@users.noreply.github.com"
