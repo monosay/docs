@@ -17,12 +17,16 @@ jobs:
     branches:
       ignore: gh-pages
 
-    working_directory: ~/repo
+    working_directory: ~/
 
     steps:
-      - run: git config --global user.email "se@users.noreply.github.com"
-      - run: git config --global user.name "Selçuk Ermaya"
-      - run: echo "machine github.com login <GITHUB_USERNAME> password $GITHUB_TOKEN" > ~/.netrc
-      - run: ls -al
-      - run: cd website && yarn install && GIT_USER=se yarn run publish-gh-pages
-      - run: echo "Done!"
+      - run: 
+          name: Build and Publish Website
+          command: |
+            git config --global user.email "se@users.noreply.github.com"
+            git config --global user.name "Selçuk Ermaya"
+            echo "machine github.com login <GITHUB_USERNAME> password $GITHUB_TOKEN" > ~/.netrc
+            pwd
+            ls -al
+            cd website && yarn install && GIT_USER=se yarn run publish-gh-pages
+            echo "Done!"
