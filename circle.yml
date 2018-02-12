@@ -11,3 +11,8 @@ deployment:
       - git config --global user.name "Selçuk Ermaya"
       - echo "machine github.com login se password $GITHUB_TOKEN" > ~/.netrc
       - cd website && npm install && GIT_USER=se npm run publish-gh-pages
+general:
+  branches:
+    ignore:
+      - gh-pages # list of branches to ignore
+      - /release\/.*/ # or ignore regexes
