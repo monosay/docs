@@ -1,0 +1,78 @@
+<html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Implementation · {mono}say - Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="Implementation · {mono}say - Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.monosay.com/index.html"/><meta property="og:description" content="First of all, If you don&#x27;t know how to build a bot with Microsoft Bot Framework (NodeJS), you can check the [&lt;i class=&quot;fas fa-book&quot;&gt;&lt;/i&gt; documentation](https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-quickstart)."/><link rel="shortcut icon" href="///platform.monosay.com/site/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/monosay-logo-inverse@2x.png"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li><a href="/docs/get-started.html" target="_self">Docs</a></li><li><a href="/docs/api.html" target="_self">API</a></li><li><a href="/en/help.html" target="_self">Help</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Microsoft Bot Framework</span></h2></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>Microsoft Bot Framework</h3><ul><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/docs/msbot-nodejs-implementation.html">Implementation - NodeJS</a></li></ul></div><div class="navGroup navGroupActive"><h3>More</h3><ul><li class="navListItem"><a class="navItem" href="/docs/msbot-nodejs-user.html">Updating User Information</a></li><li class="navListItem"><a class="navItem" href="/docs/msbot-nodejs-data.html">Using Data Collections</a></li></ul></div></div></section></div><script>
+          var toggler = document.getElementById('navToggler');
+          var nav = document.getElementById('docsNav');
+          toggler.onclick = function() {
+            nav.classList.toggle('docsSliderActive');
+          };
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>Implementation</h1></header><article><div><span><p>First of all, If you don't know how to build a bot with Microsoft Bot Framework (NodeJS), you can check the <a href="https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-quickstart"><i class="fas fa-book"></i> documentation</a>.</p>
+<h2><a class="anchor" aria-hidden="true" name="implementation"></a><a href="#implementation" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implementation</h2>
+<p>Let's go step by step.</p>
+<ol>
+<li>You need to install our nodejs package to your project.</li>
+</ol>
+<pre><code class="hljs css bash">npm install monosay@https://www.myget.org/F/monosay/npm/monosay/-/monosay-1.0.0-beta03.tgz
+</code></pre>
+<ol start="2">
+<li>You must create a bot on our platform</li>
+</ol>
+<p><a href="//platform.monosay.com/bots/create" target="_blank" class="button"><i class="fas fa-plus"></i> Create a Bot</a> (If you already have a bot skip this step.)</p>
+<ol start="3">
+<li>You must create a channel to connect with</li>
+</ol>
+<p>If you already have your token just skip this step.</p>
+<ul>
+<li>Go to your bot</li>
+<li>Click channels</li>
+<li>Create Your Channel</li>
+<li>Copy Your Token</li>
+</ul>
+<p>Keep your token for next step.</p>
+<ol start="4">
+<li>Import the library</li>
+</ol>
+<pre><code class="hljs css javascript"><span class="hljs-keyword">var</span> restify = <span class="hljs-built_in">require</span>(<span class="hljs-string">'restify'</span>);
+<span class="hljs-keyword">var</span> builder = <span class="hljs-built_in">require</span>(<span class="hljs-string">'botbuilder'</span>);
+
+<span class="hljs-comment">// ...</span>
+<span class="hljs-keyword">var</span> monosay = <span class="hljs-built_in">require</span>(<span class="hljs-string">'monosay'</span>).usebotframework(<span class="hljs-string">"YOUR_MONOSAY_TOKEN"</span>);
+<span class="hljs-comment">// ...</span>
+</code></pre>
+<ol start="5">
+<li>Initialize the library</li>
+</ol>
+<pre><code class="hljs css javascript"><span class="hljs-comment">// ...</span>
+<span class="hljs-keyword">var</span> bot = <span class="hljs-keyword">new</span> builder.UniversalBot(connector, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">session</span>) </span>{
+    session.send(<span class="hljs-string">"You said: %s"</span>, session.message.text);
+});
+<span class="hljs-comment">// ...</span>
+<span class="hljs-comment">// Initialize the library</span>
+monosay.init(bot);
+<span class="hljs-comment">// ...</span>
+</code></pre>
+<ol start="6">
+<li>Set the session storage (Optional but highly recommended)</li>
+</ol>
+<pre><code class="hljs css javascript"><span class="hljs-comment">// ...</span>
+<span class="hljs-comment">// ...</span>
+<span class="hljs-comment">// Set the storage</span>
+bot.set(<span class="hljs-string">"storage"</span>, monosay.storage);
+<span class="hljs-comment">// ...</span>
+monosay.init(bot);
+<span class="hljs-comment">// ...</span>
+</code></pre>
+<ol start="7">
+<li>Start messaging with your bot.</li>
+<li>Go to your Bot's dashboard</li>
+<li>You will start to see your Analytics, Conversations and more...</li>
+</ol>
+<ul>
+<li>Dashboard
+<img src="/img/screenshots/monosay-analytics.png" style="margin: 50px 20px; padding: 8px; box-shadow: 0 0 20px 0 #ddd" /></li>
+<li>Conversations
+<img src="/img/screenshots/monosay-conversations.png" style="margin: 50px 20px; padding: 8px; box-shadow: 0 0 20px 0 #ddd" /></li>
+</ul>
+<p><i class="fas fa-check"></i> Congratulations! You have finally implemented <strong>{mono}say</strong> into your Bot.</p>
+<p>Do you want more?</p>
+<p><a href="/docs/msbot-nodejs-user.html"><i class="fas fa-user"></i> Updating User Information</a></p>
+<p><a href="/docs/msbot-nodejs-data.html"><i class="fas fa-database"></i> Using Data Collections</a></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="msbot-nodejs-user.html">Updating User Information →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a><div><h5>Community</h5><a href="/en/users.html">User Showcase</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/monosay/docs" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 {mono}say is a product of <a target="_blank" href="https://monofor.com">MonoFor, Inc.</a></section></footer></div></body></html>
