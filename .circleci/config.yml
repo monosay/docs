@@ -20,14 +20,8 @@ jobs:
     working_directory: ~/repo
 
     steps:
-      # run tests!
-      - run: echo "Skipping the test."
-
-    deployment:
-      website:
-        branch: master
-        commands:
-          - git config --global user.email "<GITHUB_USERNAME>@users.noreply.github.com"
-          - git config --global user.name "<YOUR_NAME>"
-          - echo "machine github.com login <GITHUB_USERNAME> password $GITHUB_TOKEN" > ~/.netrc
-          - cd website && npm install && GIT_USER=<GIT_USER> npm run publish-gh-pages
+      - run: git config --global user.email "se@users.noreply.github.com"
+      - run: git config --global user.name "Selçuk Ermaya"
+      - run: echo "machine github.com login <GITHUB_USERNAME> password $GITHUB_TOKEN" > ~/.netrc
+      - run: cd website && yarn install && GIT_USER=se yarn run publish-gh-pages
+      - run: echo "Done!"
