@@ -1,0 +1,28 @@
+.showCase .blockImage {
+    width: 200px;
+    height: 200px;
+    max-width: 200px;
+}
+
+.lightBackground {
+    background: #fff;
+    border-top: 1px solid #ededed;
+}
+
+.navigationSlider .slidingNav ul {
+    background: #333;
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+    .navigationSlider .slidingNav ul {
+        background: #868686;
+    }
+}
+
+@media only screen and (min-width: 1024px) {}
+
+@media only screen and (max-width: 1023px) {}
+
+@media only screen and (min-width: 1400px) {}
+
+@media only screen and (min-width: 1500px) {}
