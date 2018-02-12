@@ -15,9 +15,10 @@ jobs:
       # - image: circleci/mongo:3.4.4
 
     branches:
+      only: master
       ignore: gh-pages
 
-    working_directory: ~/
+    working_directory: ~/src
 
     steps:
       - run: 
