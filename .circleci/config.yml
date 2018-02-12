@@ -21,6 +21,7 @@ jobs:
     working_directory: ~/src
 
     steps:
+      - checkout
       - run: 
           name: Build and Publish Website
           command: |
