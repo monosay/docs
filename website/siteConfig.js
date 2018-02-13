@@ -41,6 +41,7 @@ const siteConfig = {
         // Highlight.js theme to use for syntax highlighting in code blocks
         theme: 'default',
     },
+    editUrl: "https://github.com/monosay/docs/edit/master/docs/",
     scripts: ['https://buttons.github.io/buttons.js', 'https://use.fontawesome.com/releases/v5.0.6/js/all.js'],
     // You may provide arbitrary config keys to be used as needed by your template.
     repoUrl: 'https://github.com/monosay/docs',
