@@ -21,4 +21,4 @@ Right now, we do support,
 
 Via API's you can implement your own middleware which helps you to implement {mono}say to your bot project.
 
-[<i class="fas fa-book"></i> Click here](api.html) and see the API documentation.
+[<i class="fas fa-book"></i> Click here](api.html) and see the API documentation.  
