@@ -3,7 +3,7 @@ id: api
 title: API
 ---
 
-Sometimes Bot Frameworks can't with developer or a project.
+Sometimes Bot Frameworks can't fit with a developer or a project.
 
 Then you can build your own middleware via API's. We are also offering developers to build their own middleware via our powerful Platform API.
 
