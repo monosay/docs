@@ -10,3 +10,5 @@ sidebar: docs
 Integration is easy via {mono}say Platform even you are not using a Framework for your Bot.
 
 We will tell you how to integrate your bot via {mono}say with Bot Frameworks and also API.
+
+[<i class="fas fa-book"></i> Click here](api.html) and see the API documentation.  
