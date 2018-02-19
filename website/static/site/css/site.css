@@ -41,7 +41,8 @@ body {
     visibility: hidden;
 }
 
-.b-box-item img {
+.b-box-item img,
+.b-box-item svg {
     width: 200px;
     max-height: 200px;
 }
@@ -62,7 +63,7 @@ body {
 }
 
 .b-box-item:hover p {
-    color: #333;
+    color: #1735e0;
     visibility: visible;
 }
 
@@ -72,6 +73,48 @@ body {
 
 .navGroup {
     background: #ffffff !important;
+}
+
+.navItem {
+    display: block !important;
+    margin-bottom: 10px !important;
+}
+
+.navItemActive {
+    border-left: 4px solid #588fdc !important;
+    padding-left: 10px !important;
+    border-radius: 3px !important;
+    color: #588fdc !important;
+}
+
+.inline-link {
+    padding: 4px;
+    background: #ddd;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    text-decoration: none !important;
+}
+
+.inline-link:hover {
+    background: #f4f4f4;
+}
+
+.intro {
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    background: #fff;
+    box-shadow: 0 0 20px 0px #dddddd75;
+}
+
+.intro h3 {
+    margin-top: 0 !important;
+}
+
+.postHeader h1 {
+    font-size: 26pt !important;
+    border-bottom: 1px solid #ddd !important;
+    padding-bottom: 20px !important;
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {

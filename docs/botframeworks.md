@@ -7,10 +7,10 @@ Using a Bot Framework can help you about building one bot for all platforms.
 
 They offer you an API and schema to build your bot, send message (text, list, image etc.) and receive message from your bot and convert these messages (API calls) to related platform requirement.
 
-### Supported Bot Frameworks
+### 🤖 Supported Bot Frameworks
 
 <div class="b-box-holder">
-    <a class="b-box-item" href="#">
+    <a class="b-box-item" href="botframework-get-started.html">
         <img src="/img/frameworks/bot-framework.png" />
         <span>Microsoft Bot Framework</span>
         <p><i class="fa fa-book"></i> Go to documentation</p>
@@ -37,7 +37,3 @@ For example, You can take advantages when you build your bot via your powerful l
 ### How can I integrate with it?
 
 {mono}say supports common Bot Frameworks with easy integration. {mono}say can be a middleware between your Bot Framework and Your Bot and analyze your data, bot-user conversations, and allows you to keep your data without additional database knowledge.
-
-### Get Started
-
-<a href="botframework-get-started.html" class="button"><i class="fas fa-book"></i> Bot Framework Documentation</a>

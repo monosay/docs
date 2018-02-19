@@ -14,10 +14,6 @@
     "bot-frameworks": {
         "Getting Started": [
             "botframework-get-started"
-        ],
-        "Microsoft Bot Framework": [
-            "msbot-nodejs",
-            "msbot-csharp"
         ]
     },
     "bot-frameworks-ms-nodejs": {
