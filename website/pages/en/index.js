@@ -126,7 +126,7 @@ const FeatureCallout = props => (
   <div
     className="productShowcaseSection"
     style={{ textAlign: 'center' }}>
-    <img src={imgUrl('svg/magician.svg')} style={{ maxWidth: '250px' }} />
+    <img src={imgUrl('svg/magician.svg')} className="img-svg" style={{ maxWidth: '250px' }} />
     <h2>You don't need to know magic tricks!</h2>
     <MarkdownBlock>Your tool will give that power to you!</MarkdownBlock>
   </div>

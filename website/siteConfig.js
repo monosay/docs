@@ -43,9 +43,11 @@ const siteConfig = {
     },
     editUrl: "https://github.com/monosay/docs/edit/master/docs/",
     scripts: [
+        'http://code.jquery.com/jquery-3.3.1.min.js',
         'https://buttons.github.io/buttons.js',
         'https://use.fontawesome.com/releases/v5.0.6/js/all.js',
-        'https://unpkg.com/spiritjs/dist/spirit.js'
+        'https://unpkg.com/spiritjs/dist/spirit.js',
+        '/site/js/svg-replace.js'
     ],
     // You may provide arbitrary config keys to be used as needed by your template.
     repoUrl: 'https://github.com/monosay/docs',
