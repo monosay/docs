@@ -1203,6 +1203,12 @@ ul#languages li {
   }
 }
 
+@media only screen and (max-device-width: 735px) {
+  .navigationSlider .slidingNav ul {
+    overflow-x: auto;
+  }
+}
+
 .docs-prevnext {
   margin: 20px 0;
 }
@@ -1814,6 +1820,91 @@ footer .copyright {
   }
 }
 
+/* Browser mockup code
+ * Contribute: https://gist.github.com/jarthod/8719db9fef8deb937f4f
+ * Live example: https://updown.io
+ */
+
+.browser-mockup {
+    border-top: 2em solid rgba(230, 230, 230, 0.3);
+    box-shadow: 0 0.1em 1em 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-radius: 3px 3px 0 0
+}
+
+.browser-mockup:before {
+    display: block;
+    position: absolute;
+    content: '';
+    top: -1.25em;
+    left: 1em;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background-color: #f44;
+    box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #9b3, 3em 0 0 2px #fb5;
+}
+
+.browser-mockup.with-tab:after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: -2em;
+    left: 5.5em;
+    width: 20%;
+    height: 0em;
+    border-bottom: 2em solid white;
+    border-left: 0.8em solid transparent;
+    border-right: 0.8em solid transparent;
+}
+
+.browser-mockup.with-url:after {
+    display: block;
+    position: absolute;
+    content: ' ';
+    top: -30px;
+    left: 8em;
+    width: calc(100% - 9.3em);
+    height: 1.2em;
+    border-radius: 2px;
+    background-color: white;
+    font-size: 9pt;
+    line-height: 19px;
+    /* height: 20px; */
+    padding: 4px 4px;
+    font-family: "SFMono-Regular", source-code-pro, Menlo, Monaco, Consolas, "Roboto Mono", "Droid Sans Mono", "Liberation Mono", Consolas, "Courier New", Courier, monospace;
+}
+
+#ms_dashboard.browser-mockup.with-url:after {
+    content: 'your-awesome-bot/Dashboard'
+}
+
+#ms_conversations.browser-mockup.with-url:after {
+    content: 'your-awesome-bot/Conversations'
+}
+
+.browser-mockup>* {
+    display: block;
+}
+
+.browser-mockup {
+    margin: 1em;
+    flex: 1;
+}
+
+.browser-mockup .hljs {
+    color: #444;
+    margin: 0;
+    border: 0;
+    background: #fff;
+    padding: 10px;
+    box-shadow: none;
+}
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700&subset=latin-ext');
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
 .showCase .blockImage {
     width: 200px;
     height: 200px;
@@ -1825,8 +1916,64 @@ footer .copyright {
     border-top: 1px solid #ededed;
 }
 
+.text-muted {
+    color: #868686;
+}
+
 .navigationSlider .slidingNav ul {
     background: #333;
+}
+
+.b-box-holder {
+    display: flex;
+}
+
+.b-box-item {
+    padding: 17px 25px;
+    margin: 15px;
+    text-align: center;
+    box-shadow: 0 0 20px 2px transparent;
+    border-radius: 0;
+    text-decoration: none !important;
+}
+
+.b-box-item p {
+    font-size: 10pt;
+    color: #dadada;
+    visibility: hidden;
+}
+
+.b-box-item img {
+    width: 200px;
+    max-height: 200px;
+}
+
+.b-box-item span {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    font-size: 11pt;
+}
+
+.b-box-item:hover {
+    text-align: center;
+    box-shadow: 0 0 20px 2px #dddddd7a;
+    border-radius: 0;
+}
+
+.b-box-item:hover p {
+    color: #333;
+    visibility: visible;
+}
+
+.navGroups {
+    box-shadow: 0 0.1em 1em 0 rgba(0, 0, 0, 0.2);
+}
+
+.navGroup {
+    background: #ffffff !important;
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
