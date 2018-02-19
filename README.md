@@ -1,4 +1,6 @@
-# {mono}say Documentation
+## {mono}say Documentation
+
+[![CircleCI](https://circleci.com/gh/monosay/docs/tree/master.png)](https://circleci.com/gh/monosay/docs/tree/master)
 
 It is easy to integrate your bot with {mono}say. We will help you about many things that you need to know about bot development via our powerful services.
 
