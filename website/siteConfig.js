@@ -42,9 +42,17 @@ const siteConfig = {
         theme: 'default',
     },
     editUrl: "https://github.com/monosay/docs/edit/master/docs/",
-    scripts: ['https://buttons.github.io/buttons.js', 'https://use.fontawesome.com/releases/v5.0.6/js/all.js'],
+    scripts: [
+        'https://buttons.github.io/buttons.js',
+        'https://use.fontawesome.com/releases/v5.0.6/js/all.js',
+        'https://unpkg.com/spiritjs/dist/spirit.js'
+    ],
     // You may provide arbitrary config keys to be used as needed by your template.
     repoUrl: 'https://github.com/monosay/docs',
+    stylesheets: [
+        "/css/browser-mockup.css",
+        "https://fonts.googleapis.com/css?family=Ubuntu:400,700&amp;subset=latin-ext"
+    ]
 };
 
 module.exports = siteConfig;

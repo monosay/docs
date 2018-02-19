@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700&subset=latin-ext');
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
 .showCase .blockImage {
     width: 200px;
     height: 200px;
@@ -9,8 +14,64 @@
     border-top: 1px solid #ededed;
 }
 
+.text-muted {
+    color: #868686;
+}
+
 .navigationSlider .slidingNav ul {
     background: #333;
+}
+
+.b-box-holder {
+    display: flex;
+}
+
+.b-box-item {
+    padding: 17px 25px;
+    margin: 15px;
+    text-align: center;
+    box-shadow: 0 0 20px 2px transparent;
+    border-radius: 0;
+    text-decoration: none !important;
+}
+
+.b-box-item p {
+    font-size: 10pt;
+    color: #dadada;
+    visibility: hidden;
+}
+
+.b-box-item img {
+    width: 200px;
+    max-height: 200px;
+}
+
+.b-box-item span {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    font-size: 11pt;
+}
+
+.b-box-item:hover {
+    text-align: center;
+    box-shadow: 0 0 20px 2px #dddddd7a;
+    border-radius: 0;
+}
+
+.b-box-item:hover p {
+    color: #333;
+    visibility: visible;
+}
+
+.navGroups {
+    box-shadow: 0 0.1em 1em 0 rgba(0, 0, 0, 0.2);
+}
+
+.navGroup {
+    background: #ffffff !important;
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {

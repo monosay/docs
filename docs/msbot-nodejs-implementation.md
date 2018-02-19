@@ -12,9 +12,14 @@ Let's go step by step.
 
 1. You need to install our nodejs package to your project.
 
+
+<div class="browser-mockup">
+
 ```bash
 npm install monosay@https://www.myget.org/F/monosay/npm/monosay/-/monosay-1.0.0-beta03.tgz
 ```
+
+</div>
 
 2. You must create a bot on our platform
 
@@ -33,6 +38,8 @@ Keep your token for next step.
 
 4. Import the library
 
+<div class="browser-mockup">
+
 ```javascript
 var restify = require('restify');
 var builder = require('botbuilder');
@@ -42,7 +49,12 @@ var monosay = require('monosay').usebotframework("YOUR_MONOSAY_TOKEN");
 // ...
 ```
 
+</div>
+
+
 5. Initialize the library
+
+<div class="browser-mockup">
 
 ```javascript
 // ...
@@ -55,7 +67,11 @@ monosay.init(bot);
 // ...
 ```
 
+</div>
+
 6. Set the session storage (Optional but highly recommended)
+
+<div class="browser-mockup">
 
 ```javascript
 // ...
@@ -67,13 +83,20 @@ monosay.init(bot);
 // ...
 ```
 
+</div>
+
 7. Start messaging with your bot.
 8. Go to your Bot's dashboard
 9. You will start to see your Analytics, Conversations and more...
 - Dashboard
-<img src="/img/screenshots/monosay-analytics.png" style="margin: 50px 20px; padding: 8px; box-shadow: 0 0 20px 0 #ddd" />
+<div id="ms_dashboard" class="browser-mockup with-url" style="padding:0 !important;">
+    <img src="/img/screenshots/monosay-analytics.png"  />
+</div>
+
 - Conversations
-<img src="/img/screenshots/monosay-conversations.png" style="margin: 50px 20px; padding: 8px; box-shadow: 0 0 20px 0 #ddd" />
+<div id="ms_conversations" class="browser-mockup with-url" style="padding:0 !important;">
+    <img src="/img/screenshots/monosay-conversations.png" />
+</div>
 
 <i class="fas fa-check"></i> Congratulations! You have finally implemented <strong>{mono}say</strong> into your Bot.
 
