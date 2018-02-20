@@ -3,9 +3,9 @@ id: botframeworks
 title: Bot Frameworks
 ---
 
-Using a Bot Framework can help you about building one bot for all platforms. 
+Using a Bot Framework can help you to built a bot for all platforms. 
 
-They offer you an API and schema to build your bot, send messages (text, list, image etc.) and receive messages from your bot and convert these messages (API calls) to related platform requirements.
+They provide you an API and schema to build your bot, send messages (text, list, image etc.) and receive messages from your bot and convert these messages (API calls) to related platform requirements.
 
 ### 🤖 Supported Bot Frameworks
 
@@ -30,9 +30,9 @@ They offer you an API and schema to build your bot, send messages (text, list, i
 
 ### What can I do with it?
 
-That help a developer build bot for all other platforms. It also offers a programming language that you can be stronger with.
+It helps a developer to build a bot for all other platforms. It also offers a programming language that you can be stronger with.
 
-For example, You can take advantages when you build your bot via your powerful language.
+For example, you can have advantages over others when you build your bot with your powerful language.
 
 ### How can I integrate with it?
 
