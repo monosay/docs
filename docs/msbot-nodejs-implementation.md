@@ -8,7 +8,7 @@ sidebar_label: Implementation - NodeJS
 
 ### <i class="fas fa-code"></i> Development
 
-First of all, If you don't know how to build a bot with Microsoft Bot Framework (NodeJS), you can check the <a target="_blank" href="https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-quickstart" class="inline-link"><i class="fab fa-microsoft"></i> documentation</a>.
+First of all, if you don't know how to build a bot with Microsoft Bot Framework (NodeJS), you can check the <a target="_blank" href="https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-quickstart" class="inline-link"><i class="fab fa-microsoft"></i> documentation</a>.
 
 Also there are lots of samples about Microsoft Bot Framework on their <a target="_blank" href="https://github.com/Microsoft/BotBuilder-Samples" class="inline-link"><i class="fab fa-github"></i> Github Repository</a>.
 
@@ -18,7 +18,7 @@ Also there are lots of samples about Microsoft Bot Framework on their <a target=
 
 Let's go step by step.
 
-1. You need to install our nodejs package to your project.
+1. You need to install our nodejs package to your project
 
 
 <div class="browser-mockup">
@@ -35,7 +35,7 @@ npm install monosay@https://www.myget.org/F/monosay/npm/monosay/-/monosay-1.0.0-
 
 3. You must create a channel to connect with
 
-If you already have your token just skip this step.
+If you already have your token just skip this step
 
 - Go to your bot
 - Click channels
@@ -77,7 +77,7 @@ monosay.init(bot);
 
 </div>
 
-6. Set the session storage (Optional but highly recommended)
+6. Set the session storage (optional but highly recommended)
 
 <div class="browser-mockup">
 
@@ -94,7 +94,7 @@ monosay.init(bot);
 </div>
 
 7. Start messaging with your bot.
-8. Go to your Bot's dashboard
+8. Go to your bot's dashboard
 9. You will start to see your Analytics, Conversations and more...
 <div id="ms_dashboard" class="browser-mockup with-url" style="padding:0 !important;">
     <img src="/img/screenshots/monosay-analytics.png"  />
