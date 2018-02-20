@@ -6,11 +6,11 @@ sidebar_label: Using Bot Frameworks
 
 Microsoft Bot Framework is a great tool for building bots.
 
-You can easly build a single bot for many platforms. It is easy to use and supporting 2 common languages to use it.
+You can easly build a single bot for many platforms. It is easy to use and it supports 2 common languages to use it.
 
-You can use C# and NodeJS to build bots with Microsoft Bot Framework but we currently only support NodeJS. (C# will be supported soon.)
+You can use C# and NodeJS to build bots with Microsoft Bot Framework but we currently support only NodeJS. (C# will be supported soon.)
 
-You can start with following documents to implement your bot with {mono}say.
+You can start with the following documents to implement your bot with {mono}say.
 
 ### <i class="fa fa-code"></i> Supported Languages
 
