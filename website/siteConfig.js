@@ -52,8 +52,8 @@ const siteConfig = {
     // You may provide arbitrary config keys to be used as needed by your template.
     repoUrl: 'https://github.com/monosay/docs',
     stylesheets: [
-        "/site/css/site.css?v=1.0.0",
-        "/site/css/browser-mockup.css?v=1.0.0",
+        "/site/css/site.css?v=1.0.1",
+        "/site/css/browser-mockup.css?v=1.0.1",
         "https://fonts.googleapis.com/css?family=Ubuntu:400,700&amp;subset=latin-ext"
     ]
 };

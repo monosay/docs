@@ -117,6 +117,31 @@ body {
     padding-bottom: 20px !important;
 }
 
+code {
+    font-size: 11pt;
+    color: #eb3737;
+    padding: 4px 2px;
+    border-bottom: 1px solid #bbb;
+}
+
+.post h3 {
+    font-weight: 400 !important;
+    border: 4px solid #a5a3a3;
+    padding: 8px 9px !important;
+    border-radius: 8px;
+    border-bottom-width: 2px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+}
+
+.text-success {
+    color: rgb(19, 179, 80);
+}
+
+.text-danger {
+    color: rgb(189, 36, 36);
+}
+
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
     .navigationSlider .slidingNav ul {
         background: #868686;
