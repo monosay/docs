@@ -40,7 +40,7 @@ You can update your user infomration with following example.
 bot.dialog("/", [
     function(session) {
             monosay.user({
-            channelUserId: ,
+            channelUserId: session.message.user.id,
             name: "USER_NAME",
             surname: "USER_SURNAME",
             profilePhotoUrl: "PROFILE_PHOTO_URL",
@@ -70,24 +70,32 @@ We have used npm `request` package for to do that.
 
 <div class="browser-mockup">
 
-```
-request.get({
-    url: process.env.BOT_FB_GRAPHAPI_URL + session.message.user.id + "?fields=id,name,picture,email,first_name,last_name",
-    headers: {
-        Authorization: "Bearer " + process.env.BOT_FB_TOKEN
+```javascript
+bot.dialog("/", [
+    function(session) {
+        request.get({
+            url: process.env.BOT_FB_GRAPHAPI_URL + session.message.user.id + "?fields=id,name,picture,email,first_name,last_name",
+            headers: {
+                Authorization: "Bearer " + process.env.BOT_FB_TOKEN
+            }
+        }, function(err, httpResponse, body) {
+            if (!err && httpResponse.statusCode == 200 && body) {
+                var user = JSON.parse(body);
+                monosay.user({
+                    channelUserId: session.message.user.id,
+                    name: user.first_name,
+                    surname: user.last_name,
+                    profilePhotoUrl: user.picture.data.url,
+                    email: user.email
+                },  /*success callback*/ function(){
+                    session.send("I updated/added your user information.");
+                }, /*error callback*/ function(){
+                    session.send("Something is wrong. I could'nt udpate your user information.");
+                });
+            }
+        });
     }
-}, function(err, httpResponse, body) {
-    if (!err && httpResponse.statusCode == 200 && body) {
-        var user = JSON.parse(body);
-        monosay.user({
-            channelUserId: user.id,
-            name: user.first_name,
-            surname: user.last_name,
-            profilePhotoUrl: user.picture.data.url,
-            email: user.email
-        }, /*success callback*/ null, /*error callback*/ null);
-    }
-});
+]);
 ```
 
 </div>
