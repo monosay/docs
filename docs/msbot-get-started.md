@@ -1,5 +1,5 @@
 ---
-id: botframework-get-started
+id: msbot-get-started
 title: Microsoft Bot Framework
 sidebar_label: Using Bot Frameworks
 ---
