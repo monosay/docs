@@ -13,7 +13,7 @@
     },
     "bot-frameworks": {
         "Getting Started": [
-            "botframework-get-started"
+            "msbot-get-started"
         ]
     },
     "bot-frameworks-ms-nodejs": {

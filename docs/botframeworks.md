@@ -10,12 +10,12 @@ They provide you an API and schema to build your bot, send messages (text, list,
 ### 🤖 Supported Bot Frameworks
 
 <div class="b-box-holder">
-    <a class="b-box-item" href="botframework-get-started.html">
+    <a class="b-box-item" href="msbot-get-started.html">
         <img src="/img/frameworks/bot-framework.png" />
         <span>Microsoft Bot Framework</span>
         <p><i class="fa fa-book"></i> Go to documentation</p>
     </a>
-    <a class="b-box-item" href="#">
+    <a class="b-box-item" href="telegraf-get-started.html">
         <img src="/img/frameworks/telegraf.png" />
         <span>Telegraf<small> for Telegram</small></span>
         <p><i class="fa fa-book"></i> Go to documentation</p>
