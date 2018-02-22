@@ -1935,6 +1935,9 @@ body {
     box-shadow: 0 0 20px 2px transparent;
     border-radius: 0;
     text-decoration: none !important;
+    flex: 1;
+    width: 0;
+    max-width: 250px;
 }
 
 .b-box-item p {
@@ -2044,9 +2047,15 @@ code {
     color: rgb(189, 36, 36);
 }
 
-@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+@media screen and (min-device-width: 0) and (max-device-width: 1000px) {
     .navigationSlider .slidingNav ul {
         background: #868686;
+    }
+    .b-box-holder {
+        display: block;
+    }
+    .b-box-item {
+        display: block;
     }
 }
 
