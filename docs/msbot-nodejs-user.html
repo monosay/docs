@@ -26,7 +26,7 @@
 <pre><code class="hljs css javascript">bot.dialog(<span class="hljs-string">"/"</span>, [
     <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">session</span>) </span>{
             monosay.user({
-            <span class="hljs-attr">channelUserId</span>: ,
+            <span class="hljs-attr">channelUserId</span>: session.message.user.id,
             <span class="hljs-attr">name</span>: <span class="hljs-string">"USER_NAME"</span>,
             <span class="hljs-attr">surname</span>: <span class="hljs-string">"USER_SURNAME"</span>,
             <span class="hljs-attr">profilePhotoUrl</span>: <span class="hljs-string">"PROFILE_PHOTO_URL"</span>,
@@ -54,23 +54,31 @@
 </table>
 <p>We have used npm <code>request</code> package for to do that.</p>
 <div class="browser-mockup">
-<pre><code class="hljs">request.get({
-    <span class="hljs-attribute">url</span>: process<span class="hljs-variable">.env</span><span class="hljs-variable">.BOT_FB_GRAPHAPI_URL</span> + session<span class="hljs-variable">.message</span><span class="hljs-variable">.user</span><span class="hljs-variable">.id</span> + "?fields=id,name,picture,email,first_name,last_name",
-    headers: {
-        Authorization: "Bearer " + process<span class="hljs-variable">.env</span><span class="hljs-variable">.BOT_FB_TOKEN</span>
+<pre><code class="hljs css javascript">bot.dialog(<span class="hljs-string">"/"</span>, [
+    <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">session</span>) </span>{
+        request.get({
+            <span class="hljs-attr">url</span>: process.env.BOT_FB_GRAPHAPI_URL + session.message.user.id + <span class="hljs-string">"?fields=id,name,picture,email,first_name,last_name"</span>,
+            <span class="hljs-attr">headers</span>: {
+                <span class="hljs-attr">Authorization</span>: <span class="hljs-string">"Bearer "</span> + process.env.BOT_FB_TOKEN
+            }
+        }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, httpResponse, body</span>) </span>{
+            <span class="hljs-keyword">if</span> (!err &amp;&amp; httpResponse.statusCode == <span class="hljs-number">200</span> &amp;&amp; body) {
+                <span class="hljs-keyword">var</span> user = <span class="hljs-built_in">JSON</span>.parse(body);
+                monosay.user({
+                    <span class="hljs-attr">channelUserId</span>: session.message.user.id,
+                    <span class="hljs-attr">name</span>: user.first_name,
+                    <span class="hljs-attr">surname</span>: user.last_name,
+                    <span class="hljs-attr">profilePhotoUrl</span>: user.picture.data.url,
+                    <span class="hljs-attr">email</span>: user.email
+                },  <span class="hljs-comment">/*success callback*/</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+                    session.send(<span class="hljs-string">"I updated/added your user information."</span>);
+                }, <span class="hljs-comment">/*error callback*/</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+                    session.send(<span class="hljs-string">"Something is wrong. I could'nt udpate your user information."</span>);
+                });
+            }
+        });
     }
-}, function(err, httpResponse, body) {
-    if (!err &amp;&amp; httpResponse<span class="hljs-variable">.statusCode</span> == 200 &amp;&amp; body) {
-        var user = JSON<span class="hljs-variable">.parse</span>(body);
-        <span class="hljs-attribute">monosay.user({
-            channelUserId</span>: user<span class="hljs-variable">.id</span>,
-            name: user<span class="hljs-variable">.first_name</span>,
-            surname: user<span class="hljs-variable">.last_name</span>,
-            profilePhotoUrl: user<span class="hljs-variable">.picture</span><span class="hljs-variable">.data</span><span class="hljs-variable">.url</span>,
-            email: user<span class="hljs-variable">.email</span>
-        }, /*success callback*/ null, /*error callback*/ null);
-    }
-});
+]);
 </code></pre>
 </div>
 <p>Just call it from the start dialog of your bot.</p>
