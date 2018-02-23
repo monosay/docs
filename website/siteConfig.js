@@ -18,6 +18,7 @@ const siteConfig = {
         { doc: 'get-started', label: 'Docs' },
         { doc: 'api', label: 'API' },
         { page: 'help', label: 'Help' },
+        { href: "https://github.com/monosay/docs", label: "GitHub" },
         { languages: true }
     ],
     disableHeaderTitle: true,
