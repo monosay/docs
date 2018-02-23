@@ -1,14 +1,14 @@
 ---
-id: msbot-nodejs-implementation
+id: telegraf-nodejs-implementation
 title: How to Implement
-sidebar_label: Implementation - NodeJS
+sidebar_label: Implementation
 ---
 
 <div class="intro">
 
 ### <i class="fas fa-code"></i> Development
 
-First of all, if you don't know how to build a bot with Microsoft Bot Framework (NodeJS), you can check the <a target="_blank" href="https://docs.microsoft.com/en-us/bot-framework/nodejs/bot-builder-nodejs-quickstart" class="inline-link"><i class="fab fa-microsoft"></i> documentation</a>.
+First of all, if you don't know how to build a Telegram Bot with Telegraf, you can check the <a target="_blank" href="http://telegraf.js.org/" class="inline-link"><i class="fas fab fa-telegram"></i> Telegraf Documentation</a>.
 
 Also there are lots of samples about Microsoft Bot Framework on their <a target="_blank" href="https://github.com/Microsoft/BotBuilder-Samples" class="inline-link"><i class="fab fa-github"></i> Github Repository</a>.
 
@@ -19,7 +19,6 @@ Also there are lots of samples about Microsoft Bot Framework on their <a target=
 Let's go step by step.
 
 1. You need to install our nodejs package to your project
-
 
 <div class="browser-mockup">
 
@@ -49,11 +48,9 @@ Keep your token for next step.
 <div class="browser-mockup">
 
 ```javascript
-var restify = require('restify');
-var builder = require('botbuilder');
-
+const Telegraf = require('telegraf')
 // ...
-var monosay = require('monosay').usebotframework("YOUR_MONOSAY_TOKEN");
+const monosay = require('monosay').usetelegraf("YOUR_MONOSAY_TELEGRAF_TOKEN");
 // ...
 ```
 
@@ -66,9 +63,7 @@ var monosay = require('monosay').usebotframework("YOUR_MONOSAY_TOKEN");
 
 ```javascript
 // ...
-var bot = new builder.UniversalBot(connector, function(session) {
-    session.send("You said: %s", session.message.text);
-});
+const bot = new Telegraf(process.env.TELEGRAM_TOKEN)
 // ...
 // Initialize the library
 monosay.init(bot);
@@ -77,25 +72,9 @@ monosay.init(bot);
 
 </div>
 
-6. Set the session storage (optional but highly recommended)
-
-<div class="browser-mockup">
-
-```javascript
-// ...
-// ...
-// Set the storage
-bot.set("storage", monosay.storage);
-// ...
-monosay.init(bot);
-// ...
-```
-
-</div>
-
-7. Start messaging with your bot.
-8. Go to your bot's dashboard
-9. You will start to see your Analytics, Conversations and more...
+6. Start messaging with your bot.
+7. Go to your bot's dashboard
+8. You will start to see your Analytics, Conversations and more...
 <div id="ms_dashboard" class="browser-mockup with-url" style="padding:0 !important;">
     <img src="/img/screenshots/monosay-analytics.png"  />
 </div>

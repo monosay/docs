@@ -1,7 +1,6 @@
 ---
 id: msbot-get-started
 title: Microsoft Bot Framework
-sidebar_label: Using Bot Frameworks
 ---
 
 Microsoft Bot Framework is a great tool for building bots.

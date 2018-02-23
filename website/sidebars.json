@@ -13,7 +13,8 @@
     },
     "bot-frameworks": {
         "Getting Started": [
-            "msbot-get-started"
+            "msbot-get-started",
+            "telegraf-get-started"
         ]
     },
     "bot-frameworks-ms-nodejs": {
@@ -23,6 +24,15 @@
         "More": [
             "msbot-nodejs-user",
             "msbot-nodejs-data"
+        ]
+    },
+    "bot-frameworks-telegraf-nodejs": {
+        "Telegraf for Telegram": [
+            "telegraf-nodejs-implementation"
+        ],
+        "More": [
+            "telegraf-nodejs-user",
+            "telegraf-nodejs-data"
         ]
     }
 }
