@@ -1998,6 +1998,7 @@ body {
     border: 1px solid #bbb;
     border-radius: 6px;
     text-decoration: none !important;
+    white-space: nowrap;
 }
 
 .inline-link:hover {
