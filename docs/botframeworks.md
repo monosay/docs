@@ -9,23 +9,42 @@ They provide you an API and schema to build your bot, send messages (text, list,
 
 ### 🤖 Supported Bot Frameworks
 
+Text Bot Frameworks
+
 <div class="b-box-holder">
     <a class="b-box-item" href="msbot-get-started.html">
-        <img src="/img/frameworks/bot-framework.png" />
+        <div class="b-box-logo">
+            <img src="/img/frameworks/bot-framework.png" />
+        </div>
         <span>Microsoft Bot Framework</span>
         <p><i class="fa fa-book"></i> Go to documentation</p>
     </a>
     <a class="b-box-item" href="telegraf-get-started.html">
-        <img src="/img/frameworks/telegraf.png" />
+        <div class="b-box-logo">    
+            <img src="/img/frameworks/telegraf.png" />
+        </div>
         <span>Telegraf<small> for Telegram</small></span>
-        <p><i class="fa fa-book"></i> Go to documentation</p>
+        <p class="text-muted">- Coming soon -</p>
     </a>
     <a class="b-box-item" href="#">
-        <img src="/img/frameworks/botkit.png" />
+        <div class="b-box-logo">    
+            <img src="/img/frameworks/botkit.png" />
+        </div>
         <span>Botkit</span>
         <p class="text-muted">- Coming soon -</p>
     </a>
-    
+</div>
+
+Voice Bot Frameworks
+
+<div class="b-box-holder">
+    <a class="b-box-item" href="#">
+        <div class="b-box-logo">
+            <img src="/img/frameworks/jovo.png" />
+        </div>
+        <span>Jovo</span>
+        <p class="text-muted">- Coming soon -</p>
+    </a>
 </div>
 
 ### What can I do with it?
