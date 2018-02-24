@@ -53,4 +53,29 @@ bot.start((ctx) => {
 
 Just call it from the start dialog of your bot.
 
+You can also use callback methods like;
+
+<div class="browser-mockup">
+
+```javascript
+bot.start((ctx) => {
+    console.log('started:', ctx.from.id)
+    monosay.user({
+        channelUserId: ctx.from.id,
+        name: ctx.from.first_name,
+        surname: ctx.from.last_name,
+        userName: ctx.from.username
+    }, 
+    /*success callback*/ function(){
+        session.send("I updated/added your user information.");
+    }, 
+    /*error callback*/ function(){
+        session.send("Something is wrong. I could'nt udpate your user information.");
+    });
+    return ctx.reply('Welcome!');
+});
+```
+
+</div>
+
 And that's it!
