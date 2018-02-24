@@ -36,5 +36,25 @@
 </code></pre>
 </div>
 <p>Just call it from the start dialog of your bot.</p>
+<p>You can also use callback methods like;</p>
+<div class="browser-mockup">
+<pre><code class="hljs css javascript">bot.start(<span class="hljs-function">(<span class="hljs-params">ctx</span>) =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'started:'</span>, ctx.from.id)
+    monosay.user({
+        <span class="hljs-attr">channelUserId</span>: ctx.from.id,
+        <span class="hljs-attr">name</span>: ctx.from.first_name,
+        <span class="hljs-attr">surname</span>: ctx.from.last_name,
+        <span class="hljs-attr">userName</span>: ctx.from.username
+    }, 
+    <span class="hljs-comment">/*success callback*/</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        session.send(<span class="hljs-string">"I updated/added your user information."</span>);
+    }, 
+    <span class="hljs-comment">/*error callback*/</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        session.send(<span class="hljs-string">"Something is wrong. I could'nt udpate your user information."</span>);
+    });
+    <span class="hljs-keyword">return</span> ctx.reply(<span class="hljs-string">'Welcome!'</span>);
+});
+</code></pre>
+</div>
 <p>And that's it!</p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="telegraf-nodejs-implementation.html">← How to Implement</a><a class="docs-next button" href="telegraf-nodejs-data.html">Using Data Collections →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2018 {mono}say is a product of <a target="_blank" href="https://monofor.com">MonoFor, Inc.</a><br/><small>Documentation built with <a target="_blank" href="https://docusaurus.io/">Docusaurus</a> and Hosted on <a target="_blank" href="https://github.com/monosay"><i class="fas fab fa-github"></i> Github</a></small></section></footer></div></body></html>
