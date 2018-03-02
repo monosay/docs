@@ -26,24 +26,24 @@ Text Bot Frameworks
         <span>Telegraf<small> for Telegram</small></span>
         <p><i class="fa fa-book"></i> Go to documentation</p>
     </a>
-    <a class="b-box-item" href="#">
+    <a class="b-box-item" href="botkit-get-started.html">
         <div class="b-box-logo">    
             <img src="/img/frameworks/botkit.png" />
         </div>
         <span>Botkit</span>
-        <p class="text-muted">- Coming soon -</p>
+        <p><i class="fa fa-book"></i> Go to documentation</p>
     </a>
 </div>
 
 Voice Bot Frameworks
 
 <div class="b-box-holder">
-    <a class="b-box-item" href="#">
+    <a class="b-box-item" href="jovo-get-started.html">
         <div class="b-box-logo">
             <img src="/img/frameworks/jovo.png" />
         </div>
         <span>Jovo</span>
-        <p class="text-muted">- Coming soon -</p>
+        <p><i class="fa fa-book"></i> Go to documentation</p>
     </a>
 </div>
 
