@@ -1,0 +1,176 @@
+<html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Using Data Collections · {mono}say - Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="Using Data Collections · {mono}say - Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://docs.monosay.com/index.html"/><meta property="og:description" content="Data collections allows you to keep your persistant data in same place without additional database knowledge. "/><link rel="shortcut icon" href="///platform.monosay.com/site/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="stylesheet" href="/site/css/site.css?v=1.0.1"/><link rel="stylesheet" href="/site/css/browser-mockup.css?v=1.0.1"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&amp;amp;subset=latin-ext"/><script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.min.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script><script type="text/javascript" src="https://unpkg.com/spiritjs/dist/spirit.js"></script><script type="text/javascript" src="/site/js/svg-replace.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/monosay-logo-inverse@2x.png"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li><a href="/docs/get-started.html" target="_self">Docs</a></li><li><a href="/docs/api.html" target="_self">API</a></li><li><a href="/en/help.html" target="_self">Help</a></li><li><a href="https://github.com/monosay/docs" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>More</span></h2></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>Botkit</h3><ul><li class="navListItem"><a class="navItem" href="/docs/botkit-nodejs-implementation.html">Implementation</a></li></ul></div><div class="navGroup navGroupActive"><h3>More</h3><ul><li class="navListItem"><a class="navItem" href="/docs/botkit-nodejs-user.html">Updating User Information</a></li><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/docs/botkit-nodejs-data.html">Using Data Collections</a></li></ul></div></div></section></div><script>
+          var toggler = document.getElementById('navToggler');
+          var nav = document.getElementById('docsNav');
+          toggler.onclick = function() {
+            nav.classList.toggle('docsSliderActive');
+          };
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/monosay/docs/edit/master/docs/botkit-nodejs-data.md" target="_blank">Edit</a><h1>Using Data Collections</h1></header><article><div><span><p>Data collections allows you to keep your persistant data in same place without additional database knowledge.</p>
+<p>You can create collections (like database table), fields (like database table columns) and rows (which is your data) in it.</p>
+<h3><a class="anchor" aria-hidden="true" name="i-class-fas-fa-database-i-creating-data-collections"></a><a href="#i-class-fas-fa-database-i-creating-data-collections" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><i class="fas fa-database"></i> Creating Data Collections</h3>
+<p>Creating data collection is so easy. Follow the steps;</p>
+<ol>
+<li>Go to your <a href="https://platform.monosay.com/bots" target="_blank"><code>Bot List</code></a> (<a href="https://platform.monosay.com/bots" target="_blank"><i class="fas fa-globe"></i> <code>Bots</code></a> on sidebar).</li>
+<li>Select your <code>Bot</code> then Click <code>Data</code>.</li>
+<li>Click <code>+ New Collection</code> for create a new data collection. (Or you can use one of your data collections listed below on the page.)
+<ul>
+<li>Select your <code>Provider</code> (Providers are your data locations.)</li>
+<li>Type your <code>Collection Title</code>: The title you can see on the display.</li>
+<li>Type your <code>Collection Name</code>: Name is important to access your data with API's and Libraries. Please pick a good name like <code>my-data</code> or <code>my_data</code>. Do not use special charachters.</li>
+</ul></li>
+<li>Add fields
+<ul>
+<li>Fields are your data column and your data type.</li>
+<li>Click <code>+ Add Field</code> button and add your field.</li>
+<li>Pick a good name and title for it. (Name is also important here. We will use that name to access that field.)</li>
+<li>Select your field type.</li>
+<li>Then save it.</li>
+<li>Add additional fields if you want to keep more data.</li>
+</ul></li>
+</ol>
+<p>Every collection comes with &quot;id&quot; field which is can't removable or changable. It will help us and you to get data or remove data directly with it.</p>
+<h3><a class="anchor" aria-hidden="true" name="i-class-fas-fa-plus-i-adding-or-updating-data"></a><a href="#i-class-fas-fa-plus-i-adding-or-updating-data" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><i class="fas fa-plus"></i> Adding or Updating Data</h3>
+<p>You can use following code for adding new data to your collection.</p>
+<div class="browser-mockup with-tab">
+<pre><code class="hljs css javascript">monosay.data(<span class="hljs-string">"feedback-data"</span>).save(
+{
+    <span class="hljs-attr">userid</span>: session.message.user.id,
+    <span class="hljs-attr">feedback</span>: <span class="hljs-string">"Hi, This is my feedback for your bot."</span>
+});
+</code></pre>
+</div>
+<p>Seems easy right? But we want to tell you more.</p>
+<p><code>monosay.data()</code> is a method taking only one parameter which is your collection name. (Our collection name in this example is &quot;feedback-data&quot;)</p>
+<p><code>monosay.data(&quot;feedback-data&quot;).save()</code> is another method and takes 3 parameters. First parameter is object <code>{}</code>. Every object property is for your field. Your field name and property value type is also important. Let's say you added 2 field to your collection. <code>no</code> (number) and <code>is_saved</code> (bool).</p>
+<p><span class="text-danger"><i class="fas fa-exclamation-circle"></i> The following example will wrong for it because of type mismatch.</span></p>
+<div class="browser-mockup with-tab">
+<pre><code class="hljs css javascript"><span class="hljs-comment">// Both fields are wrong because of type mismatch.</span>
+monosay.data(<span class="hljs-string">"feedback-data"</span>).save({<span class="hljs-attr">no</span>: <span class="hljs-string">"4"</span>, <span class="hljs-attr">is_saved</span>: <span class="hljs-string">"false"</span>});
+</code></pre>
+</div>
+<p><span class="text-success"><i class="fas fa-check-circle"></i> The correct one is;</span></p>
+<div class="browser-mockup with-tab">
+<pre><code class="hljs css javascript"><span class="hljs-comment">// Both fields are seems fine now.</span>
+monosay.data(<span class="hljs-string">"feedback-data"</span>).save({<span class="hljs-attr">no</span>: <span class="hljs-number">4</span>, <span class="hljs-attr">is_saved</span>: <span class="hljs-literal">false</span>});
+</code></pre>
+</div>
+<p><code>save</code> method also comes with 2 additonal callback. One of them is for success and one of them is error. Success callback fire only when everything is go fine with your save action. Error callback fire only when something is wrong with your data or connection or server.</p>
+<p>Let's try it. (Code will looks complex but they are all just comments 😉)</p>
+<div class="browser-mockup with-tab">
+<pre><code class="hljs css javascript"><span class="hljs-comment">// Both fields are seems fine now.</span>
+monosay.data(<span class="hljs-string">"feedback-data"</span>).save(
+    { 
+        <span class="hljs-attr">userid</span>: session.message.user.id,
+        <span class="hljs-attr">feedback</span>: <span class="hljs-string">"Hi, This is my feedback for your bot."</span>
+    },
+    <span class="hljs-comment">// status will give you message from the server</span>
+    <span class="hljs-comment">// It can contain additional things with your data</span>
+    <span class="hljs-comment">// Success Callback (optional)</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">status</span>)</span>{
+        <span class="hljs-comment">// It will fire when everythings fine.</span>
+        <span class="hljs-comment">// status.data will contain your data on the server.</span>
+        <span class="hljs-comment">// It will also contain status.data.id which is for your data's unique id.</span>
+        session.send(<span class="hljs-string">"I saved your data and your data id is "</span> + status.data.id);
+    },
+    <span class="hljs-comment">// status will give you message from the server</span>
+    <span class="hljs-comment">// It can contain additional things with your data</span>
+    <span class="hljs-comment">// like errors with your data.</span>
+    <span class="hljs-comment">// Error Callback (Optional)</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">status</span>)</span>{
+        <span class="hljs-comment">// It will fire when something is wrong.</span>
+        <span class="hljs-keyword">if</span> (status) {
+            <span class="hljs-comment">// Inform the bot user.</span>
+            session.send(status.message || <span class="hljs-string">"Something is wrong."</span>);
+            <span class="hljs-comment">// About what is wrong.</span>
+            <span class="hljs-comment">// status.errors will contain array (list) of errors.</span>
+            status.errors &amp;&amp; status.errors.forEach(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+                session.send(err.message + <span class="hljs-string">" ("</span> + err.internalMessage + <span class="hljs-string">")"</span>);
+            });
+            <span class="hljs-built_in">console</span>.debug(<span class="hljs-string">"STATUS:"</span> + status.message + <span class="hljs-string">", INTERNAL: "</span> + status.internalMessage)
+        } <span class="hljs-keyword">else</span> {
+            session.send(<span class="hljs-string">"Something is wrong!"</span>);
+        }
+    }
+);
+</code></pre>
+</div>
+<p>If you want to update that data, just send that data's id and you will get the same result when you try to call same method.</p>
+<p>Here is the example.</p>
+<div class="browser-mockup with-tab">
+<pre><code class="hljs css javascript"><span class="hljs-comment">// Your Data's Unique Id - You can take it from your collection page or from data list.</span>
+<span class="hljs-keyword">var</span> feedbackId = <span class="hljs-string">"aaaabbbbccc123"</span>;
+<span class="hljs-comment">// Both fields are seems fine now.</span>
+monosay.data(<span class="hljs-string">"feedback-data"</span>).save(
+    { 
+        <span class="hljs-attr">id</span>: feedbackId,
+        <span class="hljs-attr">userid</span>: session.message.user.id,
+        <span class="hljs-attr">feedback</span>: <span class="hljs-string">"Hi, This is my updated feedback for your bot."</span>
+    },
+    <span class="hljs-comment">// Success Callback (Optional)</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">status</span>)</span>{
+        session.send(<span class="hljs-string">"I have updated your data"</span>);
+    },
+    <span class="hljs-comment">// Error Callback (Optional)</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">status</span>)</span>{
+        <span class="hljs-keyword">if</span> (status) {
+            session.send(status.message || <span class="hljs-string">"Something is wrong."</span>);
+            status.errors &amp;&amp; status.errors.forEach(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+                session.send(err.message + <span class="hljs-string">" ("</span> + err.internalMessage + <span class="hljs-string">")"</span>);
+            });
+            <span class="hljs-built_in">console</span>.debug(<span class="hljs-string">"STATUS:"</span> + status.message + <span class="hljs-string">", INTERNAL: "</span> + status.internalMessage)
+        } <span class="hljs-keyword">else</span> {
+            session.send(<span class="hljs-string">"Something is wrong!"</span>);
+        }
+    }
+);
+</code></pre>
+</div>
+<p>That's it 😉. You know lots of things right now. Let's keeping going to next one.</p>
+<h3><a class="anchor" aria-hidden="true" name="i-class-fas-fa-asterisk-i-getting-data"></a><a href="#i-class-fas-fa-asterisk-i-getting-data" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><i class="fas fa-asterisk"></i> Getting Data</h3>
+<p>When you need to get spesific data, you can get it with your data's id. You can find that id from your Bot's Data Collection page. Also you can list it from your data. When you save your data, also you will get that data from <code>status.data.id</code>.</p>
+<p>Every method (like <code>monosay.data().save()</code>) contains same callbacks <code>success</code> and <code>error</code>.</p>
+<div class="browser-mockup with-tab">
+<pre><code class="hljs css javascript">monosay
+    .data(<span class="hljs-string">"feedback-data"</span>)
+    .get(<span class="hljs-string">"YOUR_DATA_ID"</span>,
+        <span class="hljs-comment">// Success Callback</span>
+        <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">status</span>) </span>{
+            <span class="hljs-keyword">if</span> (status.data != <span class="hljs-literal">null</span>) {
+                session.send(<span class="hljs-string">"I found it. "</span>);
+                session.send(<span class="hljs-string">"Your data is: "</span> + status.data.feedback);
+            } <span class="hljs-keyword">else</span> {
+                session.send(<span class="hljs-string">"Something is wrong."</span>);
+            }
+        },
+        <span class="hljs-comment">// Error Callback</span>
+        <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">status</span>) </span>{
+            session.send(<span class="hljs-string">"I couldn't find your data."</span>);
+        });
+</code></pre>
+</div>
+<p>That's it! You also know how to get data 👍.</p>
+<h3><a class="anchor" aria-hidden="true" name="i-class-fas-fa-minus-circle-i-removing-data"></a><a href="#i-class-fas-fa-minus-circle-i-removing-data" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><i class="fas fa-minus-circle"></i> Removing Data</h3>
+<p>Compared to get spesific data, It is same usage but different method name.</p>
+<p>When you want to remove a data just it following example with your data.</p>
+<div class="browser-mockup with-tab">
+<pre><code class="hljs css javascript">monosay
+    .data(<span class="hljs-string">"feedback-data"</span>)
+    .delete(<span class="hljs-string">"YOUR_DATA_ID"</span>,
+        <span class="hljs-comment">// Success Callback</span>
+        <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">status</span>) </span>{
+            <span class="hljs-keyword">if</span> (status.data != <span class="hljs-literal">null</span>) {
+                session.send(<span class="hljs-string">"Your data has been removed."</span>);
+            } <span class="hljs-keyword">else</span> {
+                session.send(<span class="hljs-string">"Something is wrong."</span>);
+            }
+        },
+        <span class="hljs-comment">// Error Callback</span>
+        <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">status</span>) </span>{
+            session.send(<span class="hljs-string">"I couldn't find your data."</span>);
+        });
+</code></pre>
+</div>
+<p>That's it! You also know how to get data 👍.</p>
+<h3><a class="anchor" aria-hidden="true" name="i-class-fas-fa-list-i-listing-data"></a><a href="#i-class-fas-fa-list-i-listing-data" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><i class="fas fa-list"></i> Listing Data</h3>
+<p>We are making a great work with that. Hold on a little bit more 😎.</p>
+<p>Coming soon 🤖.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="botkit-nodejs-user.html">← Updating User Information</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="copyright">Copyright © 2018 {mono}say is a product of <a target="_blank" href="https://monofor.com">MonoFor, Inc.</a><br/><small>Documentation built with <a target="_blank" href="https://docusaurus.io/">Docusaurus</a> and Hosted on <a target="_blank" href="https://github.com/monosay"><i class="fas fab fa-github"></i> Github</a></small></section></footer></div></body></html>
