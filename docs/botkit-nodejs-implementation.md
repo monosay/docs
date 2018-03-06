@@ -11,7 +11,7 @@ Let's go step by step.
 <div class="browser-mockup">
 
 ```bash
-npm install monosay@https://www.myget.org/F/monosay/npm/monosay/-/monosay-1.0.0.tgz
+npm install monosay
 ```
 
 </div>
