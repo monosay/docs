@@ -79,13 +79,15 @@ monosay.init(bot);
 
 6. Set the session storage (optional but highly recommended)
 
+It is required for persistent user state.
+
 <div class="browser-mockup">
 
 ```javascript
 // ...
 // ...
 // Set the storage
-bot.set("storage", monosay.storage);
+bot.set("storage", monosay.storage());
 // ...
 monosay.init(bot);
 // ...
